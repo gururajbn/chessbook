@@ -1,0 +1,17 @@
+{
+  "name": "chessbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.2",
+    "express": "^4.13.4",
+    "express.io": "^1.1.13",
+    "socket.io": "^1.4.5"
+  }
+}
