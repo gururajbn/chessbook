@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block head %}
+<link rel="stylesheet" href="/lib/chessboardjs/css/chessboard.min.css">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div id="board" style="width: 500px"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="/lib/chess.js/chess.min.js"></script>
+<script type="text/javascript" src="/lib/chessboardjs/js/chessboard.min.js"></script>
+<script>
+    var init = function() {
+    //--- start example JS ---
+    var board = ChessBoard('board', 'start');
+    //--- end example JS ---
+    }; // end init()
+    $(document).ready(init);
+</script>
+{% endblock %}
