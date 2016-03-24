@@ -1,0 +1,25 @@
+{
+  "name": "chessbook",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "gururajbn <n.gururajbn@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chess.js": "^0.9.3",
+    "chessboardjs": "chessboard.js#^0.3.2",
+    "sweetalert": "^1.1.3"
+  }
+}
