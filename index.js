@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var io= require('socket.io');
 var routes= require('./routes/index.js');
 var app= express();
-var socket=require('./routes/socketHandler.js');
+var socket=require('./routes/sockethandler.js');
 var port= process.env.PORT | 8000;
 
 // view engine setup
