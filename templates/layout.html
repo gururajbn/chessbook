@@ -8,17 +8,16 @@
 <link rel="stylesheet" href="/lib/chessboardjs/css/chessboard.min.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/lib/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="/static/main.js"></script>
+<script type="text/javascript" src="/game.js"></script>
 {% block head %}
 {% endblock %}
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
+          <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -26,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">chessbook</a>
+              <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-knight" aria-hidden="true"> </span> ChessBook</a>
             </div>
           </div>
     </nav>
@@ -35,6 +34,8 @@
         {% block content %}
         {% endblock %}
     </div>
+    <script type="text/javascript" src="/lib/chess.js/chess.min.js"></script>
+    <script type="text/javascript" src="/lib/chessboardjs/js/chessboard.min.js"></script>
     {% block script %}
     {% endblock %}
 </body>

@@ -5,6 +5,8 @@ var gameId= $("#gameId").val();
 var turn;
 $("#myturn").hide();
 $("#histurn").hide();
+$('#gameId').hide();
+$('#orientation').hide();
 if(orientation == 'white')
     turn='w';
 else
@@ -74,7 +76,7 @@ var updateStatus = function() {
     $("#histurn").show();
     $("#myturn").hide();
   }
-  
+
   if (game.turn() === 'b') {
     moveColor = 'Black';
   }
@@ -103,6 +105,12 @@ var updateStatus = function() {
   pgnEl.html(game.pgn());
 };
 
+function pieceTheme(piece) {
+  // wikipedia theme for white pieces
+  var piece_theme_url='/lib/chessboardjs/img/chesspieces/wikipedia/';
+  return  piece_theme_url+ piece + '.png';
+}
+
 var updateGame= function(option){
     var data={
         gameId:gameId,
@@ -117,6 +125,7 @@ var updateGame= function(option){
 var cfg = {
   orientation:orientation,
   draggable: true,
+  pieceTheme: pieceTheme,
   position: 'start',
   onDragStart: onDragStart,
   onDrop: onDrop,
@@ -126,11 +135,11 @@ board = ChessBoard('board', cfg);
 updateStatus();
 //socket handlers
 
-    socket.emit('join',{ gameId:gameId});
+socket.emit('join',{ gameId:gameId});
 
-    socket.on('updatePostition',function(data){
-        board.position(data.fen);
-        game.load(data.fen);
-        updateStatus();
-    });
+socket.on('updatePostition',function(data){
+    board.position(data.fen);
+    game.load(data.fen);
+    updateStatus();
+});
 }; // end init()

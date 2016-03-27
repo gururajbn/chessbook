@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block head %}
-<script type="text/javascript" src="/game.js"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -19,9 +19,16 @@
 {% endblock %}
 
 {% block script %}
-<script type="text/javascript" src="/lib/chess.js/chess.min.js"></script>
-<script type="text/javascript" src="/lib/chessboardjs/js/chessboard.min.js"></script>
 <script>
 $(document).ready(init);
+{% if newgame %}
+swal({
+        title: "Invite friend, share this link",
+        text: "<center><code>"+window.location.host+"/joingame/{{gameId}}</code><center>",
+        html: true
+    });
+{% else %}
+    swal("Welcome, lets play!");
+{% endif %}
 </script>
 {% endblock %}

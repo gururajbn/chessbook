@@ -1,24 +1,26 @@
 var express= require('express');
 var shortId= require('shortid');
-var gameId= shortId.generate();
-
 router= express.Router();
 
 router.get('/',function(req,res){
         res.render('home',{'title':'welcome to chessbook'});
 });
 
-router.get('/white',function(req,res){
+router.get('/newgame',function(req,res){
+    var gameId= shortId.generate();
     res.render('play',{
         orientation:'white',
-        gameId:gameId
+        gameId:gameId,
+        newgame:true
     });
 });
 
-router.get('/black',function(req,res){
+router.get('/joingame/:gameId',function(req,res){
+    var gameId= req.params.gameId;
     res.render('play',{
         orientation:'black',
-        gameId:gameId
+        gameId:gameId,
+        newgame:false
     });
 });
 
