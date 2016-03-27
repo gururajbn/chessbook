@@ -3,11 +3,12 @@ var init = function() {
 var orientation= $("#orientation").val();
 var gameId= $("#gameId").val();
 var turn;
-
+$("#myturn").hide();
+$("#histurn").hide();
 if(orientation == 'white')
-    turn='White';
+    turn='w';
 else
-    turn='Black';
+    turn='b';
 
 console.log(orientation,gameId);
 var socket = io();
@@ -21,11 +22,18 @@ var board,
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
 var onDragStart = function(source, piece, position, orientation) {
-  if (game.game_over() === true ||
-      (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
-    return false;
-  }
+
+    if(turn == 'w'){
+        if (game.in_checkmate() === true || game.in_draw() === true ||
+            piece.search(/^b/) !== -1) {
+                        return false;
+         }
+    }else{
+        if (game.in_checkmate() === true || game.in_draw() === true ||
+            piece.search(/^w/) !== -1) {
+                    return false;
+         }
+    }
 };
 
 var onDrop = function(source, target, piece) {
@@ -56,8 +64,17 @@ var onSnapEnd = function() {
 
 var updateStatus = function() {
   var status = '';
-  console.log('turn:'+game.turn());
-  var moveColor = turn;
+
+  var moveColor = 'White';
+
+  if(game.turn() == turn){
+    $("#myturn").show();
+    $("#histurn").hide();
+  }else{
+    $("#histurn").show();
+    $("#myturn").hide();
+  }
+  
   if (game.turn() === 'b') {
     moveColor = 'Black';
   }

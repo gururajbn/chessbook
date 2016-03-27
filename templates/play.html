@@ -5,12 +5,15 @@
 {% block content %}
 <div class="row">
     <div class="col-md-6">
-        <div id="board" style="width: 500px"></div>
+        <div class="row"id="board" style="width: 500px"></div>
+        <div class="row">
+            <h4 id="myturn" class="text-muted">your turn</h4>
+            <h4 id="histurn" class="text-primary">oppenent's turn</h4>
+        </div>
     </div>
     <div class="col-md-6">
         <input id="gameId" value="{{gameId}}" readonly>
         <input id="orientation" value="{{orientation}}" readonly>
-        <p id="turn" class="text-default"></p>
     </div>
 </div>
 {% endblock %}
