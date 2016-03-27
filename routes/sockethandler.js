@@ -9,7 +9,7 @@ function socketRouter(io){
         });
 
         socket.on('changeInPosition',function(data){
-            console.log("updatePostition from "+socket.id+"\n "+data);
+            //console.log("updatePostition from "+socket.id+"\n "+data);
             socket.broadcast.to(data.gameId).emit('updatePostition',data);
         })
     })
