@@ -6,7 +6,9 @@ var io= require('socket.io');
 var routes= require('./routes/index.js');
 var app= express();
 var socket=require('./routes/sockethandler.js');
-app.set('port', (process.env.PORT || 8000));
+var port = process.env.PORT || 8080;
+
+//app.set('port', (process.env.PORT || 8000));
 
 // view engine setup
 app.engine('html', swig.renderFile);
