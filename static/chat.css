@@ -1,0 +1,39 @@
+
+.chatwindow {
+  height: 50%;
+  padding-bottom: 60px;
+}
+
+.chatbox {
+    height:90%;
+   overflow:auto;
+    background:#fff;
+}
+
+.log {
+  color: red;
+  font-size: 90%;
+  margin: 5px;
+  text-align: center;
+}
+
+.inputMessage {
+  bottom: 0;
+  height: 50px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.convo.username{
+    margin: 5px;
+    text-align: left;
+}
+
+.convo.message {
+    margin: 5px;
+    text-align: left;
+}
