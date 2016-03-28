@@ -27,13 +27,3 @@
   right: 0;
   width: 100%;
 }
-
-.convo.username{
-    margin: 5px;
-    text-align: left;
-}
-
-.convo.message {
-    margin: 5px;
-    text-align: left;
-}

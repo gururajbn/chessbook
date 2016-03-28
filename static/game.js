@@ -1,19 +1,23 @@
+$(document).ready(init);
+
+var socket = io();
 var init = function() {
 //--- start example JS ---
-var orientation= $("#orientation").val();
-var gameId= $("#gameId").val();
 var turn;
 $("#myturn").hide();
 $("#histurn").hide();
 $('#gameId').hide();
 $('#orientation').hide();
+
+var orientation= $("#orientation").val();
+var gameId= $("#gameId").val();
+
 if(orientation == 'white')
     turn='w';
 else
     turn='b';
 
 console.log(orientation,gameId);
-var socket = io();
 
 var board,
   game = new Chess(),

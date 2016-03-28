@@ -7,8 +7,8 @@
     <div class="col-md-6">
         <div class="row"id="board" style="width: 500px"></div>
         <div class="row">
-            <h4 id="myturn" class="text-muted">your turn</h4>
-            <h4 id="histurn" class="text-primary">oppenent's turn</h4>
+            <h4 id="myturn" class="text-primary">your turn</h4>
+            <h4 id="histurn" class="text-muted">oppenent's turn</h4>
         </div>
     </div>
     <div class="col-md-6">
@@ -17,28 +17,9 @@
         <div class="row">
             <div class="chatwindow col-md-10">
                 <div class="chatbox">
-                    <blockquote>
-                      <p>hi there</p>
-                    </blockquote>
-                    <blockquote >
-                      <p>hello</p>
-                    </blockquote>
-                    <blockquote>
-                      <p>how did you do that</p>
-                      <small><cite title="Source Title">Source Title</cite></small>
-                    </blockquote>
-                    <blockquote class="blockquote-reverse">
-                      <p>he he :)</p>
-                      <small><cite title="Source Title">Source Title</cite></small>
-                    </blockquote>
-                    <blockquote class="blockquote-reverse">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <small><cite title="Source Title">Source Title</cite></small>
-                    </blockquote>
-                    <p class="text-danger log">Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    </blockquote>
+                    <ul class="messages" style="list-style-type:none">
+                        <li><p class="lead"> type message and hit enter to start chat</p></li>
+                    </ul>
                 </div>
                 <div class="form-group">
                   <input class="form-control input-sm" type="text"  placeholder="type here" id="inputSmall" autofocus>
@@ -63,4 +44,5 @@ swal({
     swal("Welcome, lets play!");
 {% endif %}
 </script>
+<script src="/chat.js"></script>
 {% endblock %}
