@@ -8,9 +8,12 @@ var user= new Schema({
     firstname: String,
     lastname: String,
     email: String,
+    gender: String,
     history:[{type:String, ref:'game'}],
     upcoming:[{type:String, ref:'game'}],
-    level: String
+    level: String,
+    googleId: String,
+    facebookId: String
 });
 
 var move=new Schema({
@@ -27,7 +30,7 @@ var game = new Schema({
     white: { type: String, ref: 'user' },
     black: { type: String, ref: 'user' },
     position: String,
-    over: {type:Boolean, default:false},
+    gameover: {type:Boolean, default:false},
     moves:[{type:String, ref:'move'}],
     winner:{type:String, default:'pending'},
     start: Date,
