@@ -2,26 +2,29 @@ var express= require('express');
 var shortId= require('shortid');
 router= express.Router();
 
+// entry points
 router.get('/',function(req,res){
-        res.render('home',{'title':'welcome to chessbook'});
+    //home
 });
 
-router.get('/newgame',function(req,res){
-    var gameId= shortId.generate();
-    res.render('play',{
-        orientation:'white',
-        gameId:gameId,
-        newgame:true
-    });
+router.post('/creategame',function(req,res){
+    //create a new game
 });
 
-router.get('/joingame/:gameId',function(req,res){
-    var gameId= req.params.gameId;
-    res.render('play',{
-        orientation:'black',
-        gameId:gameId,
-        newgame:false
-    });
+router.post('/createtournament',function(req,res){
+    //create a tournament
+});
+
+router.get('/white/:gameId',function(req,res){
+    //connect to game as white
+});
+
+router.get('/black/:gameId',function(req,res){
+    //connect to game as black
+});
+
+router.get('/:userId',function(req,res){
+    //get usr profile
 });
 
 module.exports= router;
