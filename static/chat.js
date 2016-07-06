@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    console.log("here");
+    // console.log("here");
     var player= $("#orientation").val();
     var gameId= $("#gameId").val();
 

@@ -17,7 +17,7 @@ if(orientation == 'white')
 else
     turn='b';
 
-console.log(orientation,gameId);
+// console.log(orientation,gameId);
 
 var board,
   game = new Chess(),

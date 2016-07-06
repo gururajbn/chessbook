@@ -3,14 +3,14 @@ function socketRouter(io){
     io.sockets.on('connection',function(socket){
 
         socket.on('join',function(data){
-            console.log(socket.id+' connected',data);
+            // console.log(socket.id+' connected',data);
             socket.join(data.gameId);
             var data={
                 type:"info",
                 message:"other player joined the game",
                 code: 200 //ok
             }
-            console.log(data);
+            // console.log(data);
             socket.broadcast.to(data.gameId).emit('notification',data);
         });
 
@@ -24,7 +24,7 @@ function socketRouter(io){
         });
 
         socket.on("disconnect",function(){
-            console.log(socket.id+" disconnected");
+            // console.log(socket.id+" disconnected");
             var data={
                 type:"info",
                 message:"other player has left the game",
