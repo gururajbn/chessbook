@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "path": "^0.12.7",
     "shortid": "^2.2.4",
     "socket.io": "^1.4.5",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "bower": "0.6.x"
   }
 }
