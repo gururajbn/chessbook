@@ -111,7 +111,7 @@ var updateStatus = function() {
 
 function pieceTheme(piece) {
   // wikipedia theme for white pieces
-  var piece_theme_url='/lib/chessboardjs/img/chesspieces/wikipedia/';
+  var piece_theme_url='/lib/wikipedia/';
   return  piece_theme_url+ piece + '.png';
 }
 

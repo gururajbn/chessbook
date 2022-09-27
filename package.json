@@ -9,12 +9,12 @@
   "dependencies": {
     "async": "^2.0.0-rc.2",
     "body-parser": "^1.15.0",
+    "bower": "^0.6.8",
     "express": "^4.13.4",
     "express.io": "^1.1.13",
     "path": "^0.12.7",
     "shortid": "^2.2.4",
     "socket.io": "^1.4.5",
-    "swig": "^1.4.2",
-    "bower": "0.6.x"
+    "swig": "^1.4.2"
   }
 }

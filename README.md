@@ -1,7 +1,7 @@
 # chessbook
 
 ## Steps
-	npm install && npm update
-    bower install && bower update
-    node index.js
+npm install && npm update
+bower install && bower update
+node index.js
 

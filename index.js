@@ -15,8 +15,8 @@ app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'templates'));
 app.use(express.static(path.join(__dirname, 'static')));
-app.use('/lib',  express.static(__dirname + '/bower_components'));
-app.use('/img', express.static(__dirname+'/bower_components/chessboardjs/img'));
+app.use('/lib',  express.static(__dirname + '/lib'));
+app.use('/img', express.static(__dirname+'/lib'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
